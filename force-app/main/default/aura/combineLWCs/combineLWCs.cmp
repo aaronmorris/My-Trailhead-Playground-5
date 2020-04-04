@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    Two LWCs inside of an aura component
+    <h3>Hello World</h3>
+    <c:helloWorld />
+    <h3>Inner LWC</h3>
+    <c:innerLWC />
+</aura:component>

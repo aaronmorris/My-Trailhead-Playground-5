@@ -1,0 +1,20 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName,flexipage:availableForRecordHome"> 
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="accountRecord" type="Account" default="{}" />
+    <aura:attribute name="accountFields" type="Object" default="{}" />
+    <aura:attribute name="recordLoadError" type="String" />
+    <aura:attribute name="v.showButton" type="Boolean" default="false" />
+
+    <force:recordData aura:id="recordLoader" fields="Name, CreatedDate" recordId="{!v.recordId}" targetFields="{!v.accountRecord}" targetError="{!v.recordLoadError}" recordUpdated="{!c.recordUpdated}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}"/>
+
+    <aura:if isTrue="{!empty(v.recordError)}">
+        <aura:if isTrue="{!v.showButton}">
+            <lightning:button label="Generate Renwal" title="Generate Renewal" onclick="{!c.generateRenewal}" />
+        </aura:if>
+        <aura:set attribute="else">
+            {!v.recordError}
+        </aura:set>
+    </aura:if>
+</aura:component>

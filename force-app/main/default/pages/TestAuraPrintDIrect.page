@@ -1,0 +1,15 @@
+<apex:page renderAs="pdf">
+    <apex:includeLightning />
+
+    <div id="lightning" />
+
+    <script>
+        $Lightning.use("c:LightningComponentContainer", function() {
+          $Lightning.createComponent("c:combineLWCs", {},
+          "lightning",
+          function(component) {
+            console.log('callback function');
+          });
+        });
+    </script>
+</apex:page>
