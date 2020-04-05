@@ -1,5 +1,6 @@
 {
     "salesforcedx-vscode-core.show-cli-success-msg": false,
     "salesforcedx-vscode-apex.java.home": "/Library/Java/JavaVirtualMachines/jdk-11.0.6.jdk/Contents/Home",
-    "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true
+    "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
+    "editor.renderWhitespace": "all"
 }
