@@ -1,0 +1,68 @@
+// This file is generated as an Apex representation of the
+//     corresponding sObject and its fields.
+// This read-only file is used by the Apex Language Server to
+//     provide code smartness, and is deleted each time you
+//     refresh your sObject definitions.
+// To edit your sObjects and their fields, edit the corresponding
+//     .object-meta.xml and .field-meta.xml files.
+
+global class Product__c {
+    global Id Id;
+    global SObject Owner;
+    global Id OwnerId;
+    global Boolean IsDeleted;
+    global String Name;
+    global Datetime CreatedDate;
+    global User CreatedBy;
+    global Id CreatedById;
+    global Datetime LastModifiedDate;
+    global User LastModifiedBy;
+    global Id LastModifiedById;
+    global Datetime SystemModstamp;
+    global Datetime LastViewedDate;
+    global Datetime LastReferencedDate;
+    global String Battery__c;
+    global String Category__c;
+    global String Charger__c;
+    global String Description__c;
+    global String Fork__c;
+    global String Front_Brakes__c;
+    global String Level__c;
+    global Decimal MSRP__c;
+    global String Material__c;
+    global String Motor__c;
+    global String Picture_URL__c;
+    global Product_Family__c Product_Family__r;
+    global Id Product_Family__c;
+    global String Rear_Brakes__c;
+    global List<AttachedContentDocument> AttachedContentDocuments;
+    global List<Attachment> Attachments;
+    global List<CollaborationGroupRecord> RecordAssociatedGroups;
+    global List<CombinedAttachment> CombinedAttachments;
+    global List<ContentDocumentLink> ContentDocumentLinks;
+    global List<DuplicateRecordItem> DuplicateRecordItems;
+    global List<EntitySubscription> FeedSubscriptionsForEntity;
+    global List<NetworkActivityAudit> ParentEntities;
+    global List<NetworkUserHistoryRecent> NetworkUserHistoryRecentToRecord;
+    global List<Note> Notes;
+    global List<NoteAndAttachment> NotesAndAttachments;
+    global List<Order_Item__c> Order_Items__r;
+    global List<ProcessInstance> ProcessInstances;
+    global List<ProcessInstanceHistory> ProcessSteps;
+    global List<RecordAction> RecordActions;
+    global List<RecordActionHistory> RecordActionHistories;
+    global List<TopicAssignment> TopicAssignments;
+    global List<AgentWork> WorkItem;
+    global List<ContentDistribution> RelatedRecord;
+    global List<ContentVersion> FirstPublishLocation;
+    global List<EventChangeEvent> What;
+    global List<EventRelationChangeEvent> Relation;
+    global List<FeedComment> Parent;
+    global List<FlowRecordRelation> RelatedRecord;
+    global List<PendingServiceRouting> WorkItem;
+    global List<TaskChangeEvent> What;
+
+    global Product__c () 
+    {
+    }
+}
