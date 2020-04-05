@@ -1,3 +1,5 @@
+// Suppressing PMD.MethodNamingConventions for my own testing name conventions
+@SuppressWarnings('PMD.MethodNamingConventions')
 @IsTest
 public with sharing class AccountUtilsTest {
 	@IsTest static void accountsByState() {
@@ -11,6 +13,27 @@ public with sharing class AccountUtilsTest {
 		System.assertEquals(1, matchingAccounts.size(), 'Expected there to be 1 matching account');
 		System.assertEquals(VA_BILLING_STATE, matchingAccounts[0].BillingState, 'Expected the billing state to be ' + VA_BILLING_STATE);
 		System.assertEquals(VA_ACCOUNT_NAME, matchingAccounts[0].Name, 'Expected the matching account name to be ' + VA_ACCOUNT_NAME);
+	}
+
+	@IsTest static void accountsByState_error_noAccess() {
+		List<Account> accounts = createAccounts();
+		System.assertEquals(3, accounts.size(), 'Expected there to be 3 accounts created');
+
+		User noAccessUser = TestUtility.createUserWithNoAccess();
+		List<Account> matchingAccounts = new List<Account>();
+		List<ApexPages.Message> pageMessages = new List<ApexPages.Message>();
+
+		System.runAs(noAccessUser) {
+			Test.startTest();
+			matchingAccounts = AccountUtils.accountsByState(VA_BILLING_STATE);
+			pageMessages = ApexPages.getMessages();
+			Test.stopTest();
+		}
+
+		System.assertEquals(null, matchingAccounts, 'Expected the accounts returned to be null');
+		System.assertEquals(1, pageMessages.size(), 'Expected there to be 1 PageMessage');
+		System.assertEquals(ApexPages.Severity.ERROR, pageMessages[0].getSeverity(), 'Expected the message severity to be ERROR');
+		System.assertEquals(pageMessages[0].getDetail(), AccountUtils.ERROR_MESSAGE_INSUFFICIENT_ACCESS, 'Expected the error message to be ' + AccountUtils.ERROR_MESSAGE_INSUFFICIENT_ACCESS);
 	}
 
 	private static List<Account> createAccounts() {
