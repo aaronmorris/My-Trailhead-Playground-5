@@ -1,0 +1,4 @@
+.sfdx/orgs/*
+
+.sfdx/tools/apex.db
+.sfdx/tools/testresults/*
