@@ -23,6 +23,20 @@ public with sharing class TestUtility {
         return user;
     }
 
+	public static List<Opportunity> getOpportunities() {
+		List<Opportunity> opportunities = [
+			SELECT
+				Id,
+				Name,
+				StageName,
+				AccountId
+			FROM
+				Opportunity
+		];
+
+		return opportunities;
+	}
+
     public static Id getProfileId(String profileName) {
         Profile profile = [
             SELECT
