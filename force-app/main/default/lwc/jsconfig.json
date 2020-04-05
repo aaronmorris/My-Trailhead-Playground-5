@@ -1,6 +1,83 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "paths": {}
+        "paths": {
+            "c/accountMap": [
+                "accountMap/accountMap.js"
+            ],
+            "c/bikeCard": [
+                "bikeCard/bikeCard.js"
+            ],
+            "c/data": [
+                "data/data.js"
+            ],
+            "c/detail": [
+                "detail/detail.js"
+            ],
+            "c/helloWorld": [
+                "helloWorld/helloWorld.js"
+            ],
+            "c/inlineMessage": [
+                "inlineMessage/inlineMessage.js"
+            ],
+            "c/innerLWC": [
+                "innerLWC/innerLWC.js"
+            ],
+            "c/ldsUtils": [
+                "ldsUtils/ldsUtils.js"
+            ],
+            "c/list": [
+                "list/list.js"
+            ],
+            "c/orderBuilder": [
+                "orderBuilder/orderBuilder.js"
+            ],
+            "c/orderItemTile": [
+                "orderItemTile/orderItemTile.js"
+            ],
+            "c/paginator": [
+                "paginator/paginator.js"
+            ],
+            "c/placeholder": [
+                "placeholder/placeholder.js"
+            ],
+            "c/productCard": [
+                "productCard/productCard.js"
+            ],
+            "c/productFilter": [
+                "productFilter/productFilter.js"
+            ],
+            "c/productListItem": [
+                "productListItem/productListItem.js"
+            ],
+            "c/productTile": [
+                "productTile/productTile.js"
+            ],
+            "c/productTileList": [
+                "productTileList/productTileList.js"
+            ],
+            "c/pubsub": [
+                "pubsub/pubsub.js"
+            ],
+            "c/selector": [
+                "selector/selector.js"
+            ],
+            "c/similarProducts": [
+                "similarProducts/similarProducts.js"
+            ],
+            "c/tile": [
+                "tile/tile.js"
+            ]
+        },
+        "experimentalDecorators": true
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
     }
 }
