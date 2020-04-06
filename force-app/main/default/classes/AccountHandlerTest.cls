@@ -3,10 +3,9 @@
 @IsTest
 public with sharing class AccountHandlerTest {
     @IsTest static void createNewOpportunity_singleAccount() {
-		List<Account> accounts = TestFactory.createAccounts(1);
-
+		// Trigger will call the method
 		Test.startTest();
-		AccountHandler.createNewOpportunity(accounts);
+		List<Account> accounts = TestFactory.createAccounts(1);
 		Test.stopTest();
 
 		List<Opportunity> opportunities = TestUtility.getOpportunities();
@@ -17,14 +16,14 @@ public with sharing class AccountHandlerTest {
 	}
 
 	@IsTest static void createNewOpportunity_error_noAccess() {
-		List<Account> accounts = TestFactory.createAccounts(1);
+
 
 		User noAccessUser = TestUtility.createUserWithNoAccess();
 		List<ApexPages.Message> pageMessages = new List<ApexPages.Message>();
 
 		System.runAs(noAccessUser) {
 			Test.startTest();
-			AccountHandler.createNewOpportunity(accounts);
+			List<Account> accounts = TestFactory.createAccounts(1);
 			pageMessages = ApexPages.getMessages();
 			Test.stopTest();
 		}
